@@ -1,8 +1,8 @@
 # Refinery CMS Audiojs
 
 Simple audio extension for [Refinery CMS](http://refinerycms.com).
-It adds a 'Audios' tab to admin menu where you can manage audios.
-And adds an 'add audio' link to WYMeditor on 'Pages'.
+It adds a 'Audios' tab to Admin menu where You can manage audios.
+Adds also an 'Add audio' link to WYMeditor on 'Pages'.
 
 There are 2 ways to include audios in your project.
 - You can upload files
@@ -20,7 +20,7 @@ The instance method `Audio#audio_to_html` renders an html audio tag like:
 ```
 You can change autoplay and loop attributes.
 
-The instance method `Audio#audio_to_html(true)` adds "controls" attribute to see audiofile properly in WYM editor.
+The instance method `Audio#audio_to_html(true)` adds `controls` attribute to see audiofile properly in WYM editor.
 
 ```html
 <audio id="audio_1" preload="auto" controls="controls">
@@ -28,11 +28,10 @@ The instance method `Audio#audio_to_html(true)` adds "controls" attribute to see
 </audio>
 ```
 
-And then JS in audio_init.js removes "controls" attribute and initilizes Audiojs player. 
-In audio.js You can chanange CSS-style, for example width of player.
+And then JS in `audio_init.js` removes `controls` attribute and initilizes Audiojs player. In `audio.js` You can change CSS-styles, for example width of player.
 
 
-This content can be added to a page in WYMeditor, or everywhere in your view like. Don't forget include audio_init.js in Your application.js file - it clears "controls" attribute.
+This content can be added to a page in WYMeditor, or everywhere in your view like. Don't forget include audio_init.js in Your `application.js` file - it clears `controls` attribute.
 
 ```erb
   <%= @my_audio.audio_to_html(true) %>
@@ -57,13 +56,7 @@ gem 'refinerycms-audiojs', github: 'IvanVP/refinerycms-audiojs'
 Now, run: 
 
     bundle install
-
-Next, to install the audio extension run:
-
     rails generate refinery:audios
-
-Run database migrations:
-
     rake db:migrate
 
 
@@ -87,17 +80,20 @@ If You still have some problems, try delete cache files in tmp/cache/assets dire
 
 Check in Your application.js 
 
+```ruby
 //= require audio
 //= require audiojs_init
+```
 
-and player-graphics.gif in assets/images/
+and `player-graphics.gif` in assets/images/
 
-Only en and ru locales available. When adding locale please add in Line4 app/assets/javascripts/refinery/admin/wymeditor_monkeypatch1.js.erb Your locale
+Only 'en' and 'ru' locales available. When adding locale please add in Line4 app/assets/javascripts/refinery/admin/wymeditor_monkeypatch1.js.erb Your locale
 
 ```ruby
 <% locales = %w(en ru)%>
 ```
 And then create and translate locale file.
+
 
 And you're done.
 
