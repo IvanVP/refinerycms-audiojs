@@ -76,6 +76,19 @@ config.action_view.sanitized_allowed_attributes = %w( preview autoload loop cont
 
 If You still have some problems, try delete cache files in tmp/cache/assets directory.
 
+## I18N
+
+Only 'en' and 'ru' locales available. 
+
+To add locale ('en' or 'ru') just copy from source file from GitHub lines to existing `en.yml`
+
+When adding new locale please add in Line4 app/assets/javascripts/refinery/admin/wymeditor_monkeypatch1.js.erb Your locale
+
+```ruby
+<% locales = %w(en ru)%>
+```
+And then create and translate locale file.
+
 ## Last step
 
 Check in Your application.js 
@@ -86,13 +99,6 @@ Check in Your application.js
 ```
 
 and `player-graphics.gif` in assets/images/
-
-Only 'en' and 'ru' locales available. When adding locale please add in Line4 app/assets/javascripts/refinery/admin/wymeditor_monkeypatch1.js.erb Your locale
-
-```ruby
-<% locales = %w(en ru)%>
-```
-And then create and translate locale file.
 
 
 And you're done.
