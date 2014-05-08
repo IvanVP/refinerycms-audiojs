@@ -1,0 +1,18 @@
+<%#encoding: UTF-8 %>
+wymeditor_boot_options.toolsItems.push({'name': 'AddAudio', 'title': 'Add_Audio', 'css': 'wym_tools_add_audio'});
+
+<% locales = %w(en ru)%>
+<% locales.each do |locale| %>
+  if (WYMeditor.STRINGS['<%=locale%>']) WYMeditor.STRINGS['<%=locale%>']['Audio'] = WYMeditor.STRINGS['<%=locale%>']['Add_Audio'] = '<%= I18n.t(:add_audio, :scope => :wym_tools, :locale => locale) %>';
+<% end %>
+
+onCloseDialog = function(){
+   $('iframe#dialog_iframe').attr('src', '');
+};
+
+WYMeditor.editor.prototype.exec_without_audio = WYMeditor.editor.prototype.exec;
+WYMeditor.editor.prototype.exec = function(cmd) {
+	if (cmd == 'AddAudio') {
+		this.dialog('Audio');
+	} else this.exec_without_audio(cmd);
+}

@@ -1,0 +1,69 @@
+ru:
+  wym_tools:
+    add_audio: Аудио
+  refinery:
+    admin:
+      dashboard:
+        additional_dashboard_menu_items:
+          create_new: Добавить аудио
+    plugins:
+      audios:
+        title: Аудио
+    audios:
+      admin:
+        audios:
+          actions:
+            create_new: Добавить аудио
+            reorder: Изменить порядок
+            reorder_done: Закончить редактирование
+          records:
+            title: Аудио
+            sorry_no_results: "Извините, ничего не найдено."
+            no_items_yet: Аудио отсутствуют. Нажмите "Добавить аудио"
+          audio:
+            view_live_html: Предварительный просмотр <br/><em>(открывается в новом окне)</em>
+            edit: Редактировать аудио
+            delete: Удалить аудио
+            file: Файл
+            link: Ссылка
+          new:
+            use_files: Использовать файлы
+          form:
+            title: Название
+          file_fields:
+            files: Файлы
+            file_tip: "Добавьте файлы (или ссылки на файлы) следующих форматов: 'mp3'"
+            use_file: Использовать файл
+            use_external_source: Использовать ссылку
+            add_file: Добавить файл
+            add_source: Добавить источник
+            delete_source: Удалить источник
+            link_to_source: Ссылка на источник
+            download_current: Использовать текущее аудио
+            or: или
+            replace: загрузить новое
+            maximum_file_size: "Максимальный размер файла: %{bytes}"
+          new_file_field:
+             use_file: Использовать файл
+             use_external_source: Использовать ссылку
+             add_file: Добавить файл
+             add_source: Добавить источник
+             delete_source: Удалить источник
+          form_option_fields:
+            options: Настройки
+            autoplay: Автоматическое воспроизведение
+            show_сontrols: Панель управления
+            preload_audio: Загружать автоматически
+            loop_audio: Повтор
+          insert:
+            insert: Вставить
+          preview_form:
+      audios:
+        show:
+          other: Другие аудио
+  activerecord:
+    attributes:
+      'refinery/audios/audio':
+        file_name: Имя файла
+        file_size: Размер файла
+        file_ext: Расширение файла

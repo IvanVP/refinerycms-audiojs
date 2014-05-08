@@ -1,0 +1,12 @@
+<%= form_for @audio, :url => refinery.audios_admin_audio_append_to_wym_path(@audio.id), :remote => true, :method => :post do |f| %>
+    <div class="options1">
+    <%= render('form_option_fields', :f => f) %>
+    </div>
+<% end %>
+<script>
+ audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+ </script>
+
+

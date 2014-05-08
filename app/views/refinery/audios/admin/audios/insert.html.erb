@@ -1,0 +1,34 @@
+<div id='dialog_list_audio'>
+  <div id='dialog_preview_audio'></div>
+  <div id='records'>
+    <%= render 'audios' %>
+  </div>
+  <%= render '/refinery/admin/form_actions', :f => nil,
+             :cancel_url => '',
+             :hide_delete => true,
+             :submit_button_text => t('.insert'),
+             :cancel_button_text => t('cancel', :scope => 'refinery.admin.form_actions'),
+             :cancel_title => nil %>
+</div>
+<%= render '/refinery/admin/search', :url => refinery.insert_audios_admin_audios_path %>
+
+<div id="preview_form"></div>
+
+<script type="text/javascript">
+    $(function(){
+        $('#submit_button').on('click', function(){
+            $('#preview_form form').submit();
+        })
+    });
+
+    $(function(){
+        $audios = $('#sortable_list li');
+        $audios.attr('style', 'cursor:pointer');
+        $audios.on('click', function(){
+            $audios.removeClass('selected');
+            $(this).addClass('selected');
+            var id = $(this).attr('id');
+            $.get('<%= refinery.dialog_preview_audios_admin_audios_path %>', {'id' : id}, null, 'script')
+        })
+    })
+</script>

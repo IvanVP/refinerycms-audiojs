@@ -1,0 +1,69 @@
+en:
+  wym_tools:
+    add_audio: Audio 
+  refinery:
+    admin:
+      dashboard:
+        additional_dashboard_menu_items:
+          create_new: Add New Audio
+    plugins:
+      audios:
+        title: Audios
+    audios:
+      admin:
+        audios:
+          actions:
+            create_new: Add New Audio
+            reorder: Reorder Audios
+            reorder_done: Done Reordering Audios
+          records:
+            title: Audios
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Audios yet. Click "Add New Audio" to add your first audio.
+          audio:
+            view_live_html: View this audio live <br/><em>(opens in a new window)</em>
+            edit: Edit this audio
+            delete: Remove this audio forever
+            file: File
+            link: Link
+          new:
+            use_files: Use files
+          form:
+            title: Title
+          file_fields:
+            files: Files
+            file_tip: Add files (or links to files) of 'mp3' types for full browser compability
+            use_file: Use file
+            use_external_source: Use external source
+            add_file: Add file
+            add_source: Add source
+            delete_source: Delete source
+            link_to_source: Link to source
+            download_current: Use current audio
+            or: or
+            replace: replace with this one
+            maximum_file_size: "Maximum file size: %{bytes}"
+          new_file_field:
+            use_file: Use file
+            use_external_source: Use external source
+            add_file: Add file
+            add_source: Add source
+            delete_source: Delete source
+          form_option_fields:
+            options: Options
+            autoplay: Autoplay
+            show_сontrols: Show controls
+            preload_audio: Preload audio
+            loop_audio: Loop audio
+          insert:
+            insert: Insert
+          preview_form:
+      audios:
+        show:
+          other: Other Audios
+  activerecord:
+    attributes:
+      'refinery/audios/audio':
+        file_name: File Name
+        file_size: File Size
+        file_ext: File Ext

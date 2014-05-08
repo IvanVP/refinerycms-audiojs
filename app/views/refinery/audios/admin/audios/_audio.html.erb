@@ -1,0 +1,23 @@
+<li style="min-height: 35px" class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(audio) -%>">
+  <span class='title'>
+    <%= audio.title %>
+    <span class='short_info'>(
+      <% audio.short_info.each do |info| %>
+       <%= "#{t(info[0])}: #{info[1]}" %>
+    <% end %>)</span>
+  </span>
+  <% unless action_name =~ /insert/   %>
+  <span class='actions'>
+    <%= link_to refinery_icon_tag('eye.png'), refinery.audios_admin_audio_path(audio, :dialog => true),
+                :title => t('.view_live_html'),
+                :target => "_blank" %>
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_audios_admin_audio_path(audio),
+                :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.audios_admin_audio_path(audio),
+                :class => "cancel confirm-delete",
+                :title => t('.delete'),
+                :confirm => t('message', :scope => 'refinery.admin.delete', :title => audio.title),
+                :method => :delete %>
+  </span>
+  <% end %>
+</li>

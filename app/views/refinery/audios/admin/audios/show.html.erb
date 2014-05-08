@@ -1,0 +1,9 @@
+<div class="audio_container">
+<h4><%= @audio.title %></h4>
+<%= @audio.audio_to_html %>
+</div>
+<script>
+ audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+ </script>
